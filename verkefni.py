@@ -26,6 +26,6 @@ def server_static(filename):
     return static_file(filename, root='./static')
 
 
-run(host='localhost', port=8800, debug = True)
+#run(host='localhost', port=8800, debug = True)
 
-#bottle.run(host='0.0.0.0', port=argv[1]) #Þetta þarf að vera í gangi til að heruko serverinn mun virka
+bottle.run(host='0.0.0.0', port=argv[1]) #Þetta þarf að vera í gangi til að heruko serverinn mun virka
