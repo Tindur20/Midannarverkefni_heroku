@@ -1,7 +1,20 @@
 <html>
 <head>
-    <%
-     for i in data['results']:
+    
+	<link rel="stylesheet" href="/static/main.css">
+	<link rel="stylesheet" href="/static/normalize.css">
+	<link rel="stylesheet" href="/static/bootstrap.min.css">
+
+
+	<title>json skrár</title>
+</head>
+<body>
+	<%
+        import urllib.request, json
+	with urllib.request.urlopen("http://apis.is/petrol") as url:
+        data = json.loads(url.read().decode())
+	
+     	for i in data['results']:
                 if i['key'] == k:
 
                 lat = i['geo']['lat']
@@ -10,14 +23,6 @@
     end
     end
 	%>
-	<link rel="stylesheet" href="/static/main.css">
-	<link rel="stylesheet" href="/static/normalize.css">
-	<link rel="stylesheet" href="/static/bootstrap.min.css">
-
-
-	<title>json skrár</title>
-</head>
-<body onload="initMap()">
 	% include('haus.tpl')
 
 
@@ -70,27 +75,6 @@
 		<br>
 		% include('fotur.tpl')
     </section>
-    <!--<script>
-        // Þetta er fyrir að byrta mapið í meirainfo síðuni
-        function initMap() {
-            var lat = {{ lat }};
-            var lng = {{ lon }};
-            var nafnTitle = '{{ company }}';
-            var mylatlng = {lat: lat, lng: lng};
-
-            map = new google.maps.Map(document.getElementById('map'), {
-            center: mylatlng,
-            zoom: 18
-            });
-
-            var marker = new google.maps.Marker({
-            position: mylatlng,
-            map: map,
-            title: nafnTitle
-            });
-        }
-    </script-->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnULYY3zcNuUFcCPraNmMw2qemsCnDyFs&callback=initMap"
-  type="text/javascript"></script>
+    
 </body>
 </html>
