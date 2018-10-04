@@ -75,6 +75,7 @@
 		% include('fotur.tpl')
     </section>
     <script>
+        // Þetta er fyrir að byrta mapið í meirainfo síðuni
         function initMap() {
             var lat = {{ lat }};
             var lng = {{ lon }};
@@ -93,7 +94,7 @@
             });
         }
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcf5Fh2zoFuO5yq3Eiy52J-X4lUz5sPaU&callback=initMap"
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnULYY3zcNuUFcCPraNmMw2qemsCnDyFs&callback=initMap"
   type="text/javascript"></script>
 </body>
 </html>

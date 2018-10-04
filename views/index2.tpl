@@ -51,12 +51,17 @@
 		</table>
 		</section>
 		<section class="col1_1">
+			<%
+				import datetime
+				t = data['timestampPriceCheck']
+				t = t[:19] # strippum af millisec
+				d = datetime.datetime.strptime(t,'%Y-%m-%dT%H:%M:%S')
+			%>
 			<div class="info">
 				<h3>Besta Verðið / Aðrar Upplýsingar</h3>
 				<h4>bensin 95 : <i>{{minpriceP}}</i> er hjá <i>{{companyP}}</i></h4>
 				<h4>Díesel: <i>{{minpriceD}}</i> er hjá <i>{{companyD}}</i></h4>
-				<h4>Uppfærsla á bensín og díesel var: </h4>
-				<h4>{{data['timestampPriceCheck']}}</h4>
+				<h4>Síðasta uppfærsla: {{ d.strftime('%d.%m.%Y Kl: %H:%M') }}  </h4>
 			</div>
 		</section>
 
