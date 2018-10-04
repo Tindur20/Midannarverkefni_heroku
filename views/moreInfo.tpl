@@ -17,16 +17,7 @@
 	<link rel="stylesheet" href="/static/main.css">
 	<link rel="stylesheet" href="/static/normalize.css">
 	<link rel="stylesheet" href="/static/bootstrap.min.css">
-     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcf5Fh2zoFuO5yq3Eiy52J-X4lUz5sPaU&callback=initMap"
-  type="text/javascript"></script>
-    <script>
-                function initMap() {
-                    new google.maps.Map(document.getElementById('map'),{
-                    center:{lat:{{lat}} , lng:{{lon}},
-                    zoom: 18
-                    });
-                }
-    </script>
+
 
 	<title>json skrár</title>
 </head>
@@ -53,6 +44,8 @@
 
                 lat = i['geo']['lat']
                 lon = i['geo']['lon']
+
+                company = i['company']
             %>
                 <tbody>
                     <tr>
@@ -81,5 +74,26 @@
 		<br>
 		% include('fotur.tpl')
     </section>
+    <script>
+        function initMap() {
+            var lat = {{ lat }};
+            var lng = {{ lon }};
+            var nafnTitle = '{{ company }}';
+            var mylatlng = {lat: lat, lng: lng};
+
+            map = new google.maps.Map(document.getElementById('map'), {
+            center: mylatlng,
+            zoom: 18
+            });
+
+            var marker = new google.maps.Marker({
+            position: mylatlng,
+            map: map,
+            title: nafnTitle
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcf5Fh2zoFuO5yq3Eiy52J-X4lUz5sPaU&callback=initMap"
+  type="text/javascript"></script>
 </body>
 </html>

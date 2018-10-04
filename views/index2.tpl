@@ -47,17 +47,21 @@
             end
             end
             %>
-
-
             </tbody>
 		</table>
 		</section>
-		<div class="info">
-			<h3>Besta Verðið</h3>
-			<h4>bensin 95 : <i>{{minpriceP}}</i> er hjá <i>{{companyP}}</i></h4>
-			<h4>Díesel: <i>{{minpriceD}}</i> er hjá <i>{{companyD}}</i></h4>
+		<section class="col1_1">
+			<div class="info">
+				<h3>Besta Verðið / Aðrar Upplýsingar</h3>
+				<h4>bensin 95 : <i>{{minpriceP}}</i> er hjá <i>{{companyP}}</i></h4>
+				<h4>Díesel: <i>{{minpriceD}}</i> er hjá <i>{{companyD}}</i></h4>
+				<h4>Uppfærsla á bensín og díesel var: </h4>
+				<h4>{{data['timestampPriceCheck']}}</h4>
+			</div>
+		</section>
 
-		</div>
+
+
 		<section class="col1_1">
 		<br>
 		% include('fotur.tpl')
