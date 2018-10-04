@@ -4,7 +4,7 @@
 	<link rel="stylesheet" href="/static/main.css">
 	<link rel="stylesheet" href="/static/normalize.css">
 	<link rel="stylesheet" href="/static/bootstrap.min.css">
-	<title>Gas Vaktinn</title>
+	<title>json skrár</title>
 </head>
 <body>
 	% include('haus.tpl')

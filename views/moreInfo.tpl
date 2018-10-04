@@ -1,19 +1,6 @@
 <html>
 <head>
-    <%
-	    import urllib.request, json
-	    with urllib.request.urlopen("http://apis.is/petrol") as url:
-        data = json.loads(url.read().decode())
 
-     for i in data['results']:
-                if i['key'] == k:
-
-                lat = i['geo']['lat']
-                lon = i['geo']['lon']
-
-    end
-    end
-	%>
 	<link rel="stylesheet" href="/static/main.css">
 	<link rel="stylesheet" href="/static/normalize.css">
 	<link rel="stylesheet" href="/static/bootstrap.min.css">
@@ -21,9 +8,14 @@
 
 	<title>json skrár</title>
 </head>
-<body onload="initMap()">
+<body>
 	% include('haus.tpl')
 
+     <%
+	    import urllib.request, json
+	    with urllib.request.urlopen("http://apis.is/petrol") as url:
+        data = json.loads(url.read().decode())
+	%>
 
 		<section class="col1_1">
 		<br>
