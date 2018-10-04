@@ -1,10 +1,6 @@
 <html>
 <head>
     <%
-	    import urllib.request, json
-	    with urllib.request.urlopen("http://apis.is/petrol") as url:
-        data = json.loads(url.read().decode())
-
      for i in data['results']:
                 if i['key'] == k:
 
