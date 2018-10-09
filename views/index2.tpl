@@ -13,9 +13,21 @@
 	with urllib.request.urlopen("http://apis.is/petrol") as url:
     gogn = json.loads(url.read().decode())
 	%>
-
-		<section class="col1_1">
+        <section class="col1_1 center">
+        <br>
+		<div class="imgWrapper">
+		    <img src="static/Atlantsolía.png" class="flex-item">
+		    <img src="static/Costco Iceland.png" class="flex-item">
+		    <img src="static/Dælan.png" class="flex-item">
+		    <img src="static/n1.png" class="flex-item">
+		    <img src="static/ób.png"  class="flex-item">
+		    <img src="static/olís.png" class="flex-item">
+		    <img src="static/orkan.png"  class="flex-item">
+		    <img src="static/orkan X.png"  class="flex-item">
+		</div>
 		<br>
+		</section>
+		<section class="col1_1">
 		<br>
 		<table class="table table-striped">
             <tbody>

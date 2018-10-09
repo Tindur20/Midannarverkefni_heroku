@@ -34,8 +34,9 @@ body{
 .imgResize{
     width:25%;
 }
-img{
-	width: 100%;
+
+.wrapper{
+    width: 5%;
 }
 
 ul li{
@@ -98,7 +99,24 @@ p{
     background-color: yellow;
 }
 
+.imgWrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap rwo;
+    width: 100px;
+    height: 100px;
+}
 
+.center{
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+}
+
+.flex-item {
+    padding: 5px;
+    margin: 10px;
+}
 * {
           box-sizing: border-box;
 }
